@@ -32,6 +32,7 @@ let _popupMessagePort: ?(MessagePort | BroadcastChannel);
 // we need to listen events from Core and convert it to simple objects possible to send over window.postMessage
 
 const handleMessage = (event: PostMessageEvent) => {
+    console.log('iframe recive event', event)
     // ignore messages from myself (chrome bug?)
     if (event.source === window || !event.data) return;
     const { data } = event;
@@ -110,6 +111,7 @@ const handleMessage = (event: PostMessageEvent) => {
     event.preventDefault();
     event.stopImmediatePropagation();
 
+    console.log('pass data to Core', message)
     // pass data to Core
     _core.handleMessage(message, isTrustedDomain);
 };
