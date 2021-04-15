@@ -1,4 +1,3 @@
-/* @flow */
 // NEM2 types from symbol-sdk
 
 export type NEM2GetPublicKey = {
