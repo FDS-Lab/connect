@@ -1,11 +1,12 @@
-// NEM2 types from symbol-sdk
+/* @flow */
+// Symbol types from symbol-sdk
 
-export type NEM2GetPublicKey = {
+export type SymbolGetPublicKey = {
     path: string | number[],
     showOnTrezor?: boolean,
 };
 
-export type NEM2PublicKey = {
+export type SymbolPublicKey = {
     publicKey: string,
     path: number[],
     serializedPath: string,

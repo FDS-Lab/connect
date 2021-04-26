@@ -1,14 +1,14 @@
-## NEM2: Get Public Key
+## Symbol: Get Public Key
 Ask device for public key at given path.
 
 ES6
 ```javascript
-const result = await TrezorConnect.nem2GetPublicKey(params);
+const result = await TrezorConnect.symbolGetPublicKey(params);
 ```
 
 CommonJS
 ```javascript
-TrezorConnect.nem2GetPublicKey(params).then(function(result) {
+TrezorConnect.symbolGetPublicKey(params).then(function(result) {
 
 });
 ```
@@ -23,15 +23,15 @@ TrezorConnect.nem2GetPublicKey(params).then(function(result) {
 - `bundle` - `Array` of Objects with `path` and `showOnTrezor` fields
 
 ### Example
-Retrieve public key of third nem2 account:
+Retrieve public key of third symbol account:
 ```javascript
-TrezorConnect.nem2GetPublicKey({
+TrezorConnect.symbolGetPublicKey({
     path: "m/44'/43'/2'/0'/0'"
 });
 ```
-Return a bundle of NEM2 public keys without displaying them on device:
+Return a bundle of Symbol public keys without displaying them on device:
 ```javascript
-TrezorConnect.nem2GetPublicKey({
+TrezorConnect.symbolGetPublicKey({
     bundle: [
         { path: "m/44'/43'/0'/0'/0'", showOnTrezor: false }, // account 1
         { path: "m/44'/43'/1'/0'/0'", showOnTrezor: false }, // account 2

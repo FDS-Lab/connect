@@ -1698,14 +1698,14 @@ export type NEMDecryptedMessage = {
     payload: string,
 };
 
-// NEM2GetPublicKey
-export type NEM2GetPublicKey = {
+// SymbolGetPublicKey
+export type SymbolGetPublicKey = {
     address_n: number[],
     show_display?: boolean,
 };
 
-// NEM2PublicKey
-export type NEM2PublicKey = {
+// SymbolPublicKey
+export type SymbolPublicKey = {
     public_key: string,
 };
 
@@ -2216,8 +2216,8 @@ export type MessageType = {
     NEMSignedTx: $Exact<NEMSignedTx>,
     NEMDecryptMessage: NEMDecryptMessage,
     NEMDecryptedMessage: $Exact<NEMDecryptedMessage>,
-    NEM2GetPublicKey: NEM2GetPublicKey,
-    NEM2PublicKey: $Exact<NEM2PublicKey>,
+    SymbolGetPublicKey: SymbolGetPublicKey,
+    SymbolPublicKey: $Exact<SymbolPublicKey>,
     RippleGetAddress: RippleGetAddress,
     RippleAddress: $Exact<RippleAddress>,
     RipplePayment: $Exact<RipplePayment>,

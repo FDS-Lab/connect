@@ -131,7 +131,7 @@ const TrezorConnect: API = {
 
     nemSignTransaction: params => call({ method: 'nemSignTransaction', ...params }),
 
-    nem2GetPublicKey: params => call({ method: 'nem2GetPublicKey', ...params }),
+    symbolGetPublicKey: params => call({ method: 'symbolGetPublicKey', ...params }),
 
     pushTransaction: params => call({ method: 'pushTransaction', ...params }),
 

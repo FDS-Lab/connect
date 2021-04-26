@@ -8829,7 +8829,7 @@
             "oneofs": {}
         },
         {
-            "name": "NEM2GetPublicKey",
+            "name": "SymbolGetPublicKey",
             "fields": [
                 {
                     "rule": "repeated",
@@ -8852,7 +8852,7 @@
             "oneofs": {}
         },
         {
-            "name": "NEM2PublicKey",
+            "name": "SymbolPublicKey",
             "fields": [
                 {
                     "rule": "required",
@@ -11149,11 +11149,11 @@
                     "id": 76
                 },
                 {
-                    "name": "MessageType_NEM2GetPublicKey",
+                    "name": "MessageType_SymbolGetPublicKey",
                     "id": 88
                 },
                 {
-                    "name": "MessageType_NEM2PublicKey",
+                    "name": "MessageType_SymbolPublicKey",
                     "id": 89
                 },
                 {

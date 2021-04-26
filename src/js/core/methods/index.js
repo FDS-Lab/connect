@@ -48,7 +48,7 @@ import rippleGetAddress from './RippleGetAddress';
 import rippleSignTransaction from './RippleSignTransaction';
 import nemGetAddress from './NEMGetAddress';
 import nemSignTransaction from './NEMSignTransaction';
-import nem2GetPublicKey from './NEM2GetPublicKey';
+import symbolGetPublicKey from './SymbolGetPublicKey';
 import signMessage from './SignMessage';
 import signTransaction from './SignTransaction';
 import stellarGetAddress from './StellarGetAddress';
@@ -115,7 +115,7 @@ const METHODS = {
     rippleSignTransaction,
     nemGetAddress,
     nemSignTransaction,
-    nem2GetPublicKey,
+    symbolGetPublicKey,
     signMessage,
     signTransaction,
     stellarGetAddress,

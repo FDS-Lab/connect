@@ -14,7 +14,7 @@ import * as EOS from './networks/eos';
 import * as Ethereum from './networks/ethereum';
 import * as Lisk from './networks/lisk';
 import * as NEM from './networks/nem';
-import * as NEM2 from './networks/nem2';
+import * as Symbol from './networks/symbol';
 import * as Ripple from './networks/ripple';
 import * as Stellar from './networks/stellar';
 import * as Tezos from './networks/tezos';
@@ -265,8 +265,8 @@ export type API = {
     nemGetAddress: Bundled<NEM.NEMGetAddress, NEM.NEMAddress>,
     nemSignTransaction: Bundled<NEM.NEMSignTransaction, Protobuf.NEMSignedTx>,
 
-    // NEM2
-    nem2GetPublicKey: Bundled<NEM2.NEM2GetPublicKey, NEM2.NEM2PublicKey>,
+    // Symbol
+    symbolGetPublicKey: Bundled<Symbol.SymbolGetPublicKey, Symbol.SymbolPublicKey>,
 
     // Ripple
     rippleGetAddress: Bundled<Ripple.RippleGetAddress, Ripple.RippleAddress>,

@@ -9,11 +9,11 @@ import * as UI from '../../constants/ui';
 import { UiMessage } from '../../message/builder';
 
 import type { CoreMessage } from '../../types';
-import type { NEM2PublicKey } from '../../types/networks/nem2';
+import type { SymbolPublicKey } from '../../types/networks/symbol';
 import type { MessageType } from '../../types/trezor/protobuf';
 
-export default class NEM2GetPublicKey extends AbstractMethod {
-    params: $ElementType<MessageType, 'NEM2GetPublicKey'>[] = [];
+export default class SymbolGetPublicKey extends AbstractMethod {
+    params: $ElementType<MessageType, 'SymbolGetPublicKey'>[] = [];
 
     hasBundle: boolean;
 
@@ -25,10 +25,10 @@ export default class NEM2GetPublicKey extends AbstractMethod {
         this.requiredPermissions = ['read'];
         this.firmwareRange = getFirmwareRange(
             this.name,
-            getMiscNetwork('NEM2'),
+            getMiscNetwork('Symbol'),
             this.firmwareRange,
         );
-        this.info = 'Export NEM2 public key';
+        this.info = 'Export Symbol public key';
 
         // create a bundle with only one batch if bundle doesn't exists
         this.hasBundle = Object.prototype.hasOwnProperty.call(message.payload, 'bundle');
@@ -68,9 +68,9 @@ export default class NEM2GetPublicKey extends AbstractMethod {
 
         let label: string;
         if (this.params.length > 1) {
-            label = 'Export multiple NEM2 public keys';
+            label = 'Export multiple Symbol public keys';
         } else {
-            label = `Export NEM2 public key for account #${
+            label = `Export Symbol public key for account #${
                 fromHardened(this.params[0].address_n[2]) + 1
             }`;
         }
@@ -91,13 +91,13 @@ export default class NEM2GetPublicKey extends AbstractMethod {
     }
 
     async run() {
-        const responses: NEM2PublicKey[] = [];
+        const responses: SymbolPublicKey[] = [];
         const cmd = this.device.getCommands();
         for (let i = 0; i < this.params.length; i++) {
             const batch = this.params[i];
             const { message } = await cmd.typedCall(
-                'NEM2GetPublicKey',
-                'NEM2PublicKey',
+                'SymbolGetPublicKey',
+                'SymbolPublicKey',
                 batch,
             );
             responses.push({

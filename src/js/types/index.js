@@ -17,7 +17,7 @@ export * from './networks/eos';
 export * from './networks/ethereum';
 export * from './networks/lisk';
 export * from './networks/nem';
-export * from './networks/nem2';
+export * from './networks/symbol';
 export * from './networks/ripple';
 export * from './networks/stellar';
 export * from './networks/tezos';
