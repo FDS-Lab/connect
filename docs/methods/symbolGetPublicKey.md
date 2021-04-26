@@ -26,16 +26,17 @@ TrezorConnect.symbolGetPublicKey(params).then(function(result) {
 Retrieve public key of third symbol account:
 ```javascript
 TrezorConnect.symbolGetPublicKey({
-    path: "m/44'/43'/2'/0'/0'"
+    path: "m/44'/4343'/2'/0'/0'",
+    showOnTrezor: true
 });
 ```
 Return a bundle of Symbol public keys without displaying them on device:
 ```javascript
 TrezorConnect.symbolGetPublicKey({
     bundle: [
-        { path: "m/44'/43'/0'/0'/0'", showOnTrezor: false }, // account 1
-        { path: "m/44'/43'/1'/0'/0'", showOnTrezor: false }, // account 2
-        { path: "m/44'/43'/2'/0'/0'", showOnTrezor: false }  // account 3
+        { path: "m/44'/4343'/0'/0'/0'", showOnTrezor: false }, // account 1
+        { path: "m/44'/4343'/1'/0'/0'", showOnTrezor: false }, // account 2
+        { path: "m/44'/4343'/2'/0'/0'", showOnTrezor: false }  // account 3
     ]
 });
 ```
@@ -44,28 +45,49 @@ TrezorConnect.symbolGetPublicKey({
 Result with only one public key
 ```javascript
 {
+    id: number
     success: true,
     payload: {
-        public_key: string,
+        path: number[]
+        publicKey: string,
+        serializedPath: string
     }
 }
 ```
 Result with bundle of public keys
 ```javascript
 {
+    id: number
     success: true,
     payload: [
-        { public_key: string }, // account 1
-        { public_key: string }, // account 2
-        { public_key: string }, // account 3
+        // account 1
+        {
+            path: number[]
+            publicKey: string,
+            serializedPath: string
+        },
+        // account 2
+        {
+            path: number[]
+            publicKey: string,
+            serializedPath: string
+        },
+        // account 3
+        {
+            path: number[]
+            publicKey: string,
+            serializedPath: string
+        }
     ]
 }
 ```
 Error
 ```javascript
 {
+    id: number
     success: false,
     payload: {
+        code: string
         error: string // error message
     }
 }
