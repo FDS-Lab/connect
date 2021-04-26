@@ -25,11 +25,12 @@ module.exports = {
     devServer: {
         contentBase: SRC,
         hot: false,
-        https: {
-            // https://webpack.js.org/configuration/dev-server/#devserverhttps
-            key: `${ABSOLUTE_BASE}/webpack/connect_dev.key`,
-            cert: `${ABSOLUTE_BASE}/webpack/connect_dev.crt`,
-        },
+        // https: {
+        //     // https://webpack.js.org/configuration/dev-server/#devserverhttps
+        //     key: `${ABSOLUTE_BASE}/webpack/connect_dev.key`,
+        //     cert: `${ABSOLUTE_BASE}/webpack/connect_dev.crt`,
+        // },
+        https: false,
         port: PORT,
         // stats: 'minimal',
         inline: true,
